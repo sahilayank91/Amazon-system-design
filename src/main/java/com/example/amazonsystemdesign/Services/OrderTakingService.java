@@ -1,6 +1,7 @@
 package com.example.amazonsystemdesign.Services;
 
 import com.example.amazonsystemdesign.Model.OrderRequest;
+import com.example.amazonsystemdesign.Model.OrderStatus;
 import com.example.amazonsystemdesign.Repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,9 @@ public class OrderTakingService {
 
     public List<OrderRequest> getAllOrders() {
         return orderRepository.findAll();
+    }
+
+    public Integer updateOrderStatus(String orderId, OrderStatus status){
+        return orderRepository.updateOrderStatus(orderId, status);
     }
 }

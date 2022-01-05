@@ -1,7 +1,6 @@
 package com.example.amazonsystemdesign.Controller;
 
 import com.example.amazonsystemdesign.Model.Customer;
-import com.example.amazonsystemdesign.Repository.CustomerRepository;
 import com.example.amazonsystemdesign.Services.CustomerServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

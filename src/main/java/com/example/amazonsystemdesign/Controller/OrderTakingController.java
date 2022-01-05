@@ -1,6 +1,7 @@
 package com.example.amazonsystemdesign.Controller;
 
 import com.example.amazonsystemdesign.Model.OrderRequest;
+import com.example.amazonsystemdesign.Model.OrderStatus;
 import com.example.amazonsystemdesign.Services.OrderTakingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,5 +26,9 @@ public class OrderTakingController {
     @GetMapping("/getAllOrders")
     public List<OrderRequest> getAllOrders() {
         return orderTakingService.getAllOrders();
+    }
+
+    public Integer updateOrderStatus(String orderId, OrderStatus status){
+       return orderTakingService.updateOrderStatus(orderId, status);
     }
 }
