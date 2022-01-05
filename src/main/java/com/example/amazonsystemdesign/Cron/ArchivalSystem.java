@@ -29,7 +29,7 @@ public class ArchivalSystem {
 
     @Scheduled(fixedDelay = 1000)
     public void archiveOrderToMongo(){
-        List<OrderRequest> orderRequestList = orderRepository.findAllByStatus(OrderStatus.PLACED);
+        List<OrderRequest> orderRequestList = orderRepository.findAllByStatus(OrderStatus.COMPLETED);
         orderRequestArchivalRepository.saveAll(orderRequestList);
         log.debug(orderRequestList.toString());
     }
