@@ -4,9 +4,12 @@ import com.example.amazonsystemdesign.Model.Customer;
 import com.example.amazonsystemdesign.Repository.CustomerRepository;
 import com.example.amazonsystemdesign.Services.CustomerServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value="/customer")
@@ -25,5 +28,10 @@ public class CustomerController {
     private Boolean updateCustomer(Customer customer){
         customerServices.addCustomer(customer);
         return true;
+    }
+
+    @GetMapping(value="/getAllCustomer")
+    private List<Customer> updateCustomer(){
+        return customerServices.getAllCustomer();
     }
 }
