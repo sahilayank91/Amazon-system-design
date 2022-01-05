@@ -1,5 +1,5 @@
 # Amazon-system-design
-System design of E commerce aplication
+System design of E-commerce application
 
 ## Features of this E commerce system
 1) Customer registration
