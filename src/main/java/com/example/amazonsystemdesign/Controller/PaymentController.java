@@ -21,7 +21,7 @@ public class PaymentController {
 
     @PostMapping(value="/makePayment")
     public Boolean makePayment(Payment payment) {
-       if(paymentService.makePayment(payment)) {
+       if(paymentService.makePayment(payment).isDone()) {
            return orderTakingController.updateOrderStatus(payment.getOrderId(), OrderStatus.COMPLETED)!=0;
        } else {
            return false;
