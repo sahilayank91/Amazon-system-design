@@ -1,8 +1,6 @@
 package com.example.amazonsystemdesign.Model;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -13,6 +11,8 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Item {
     @Id
     @Column(name = "id", nullable = false, updatable = false)
